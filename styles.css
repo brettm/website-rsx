@@ -11,6 +11,15 @@ body {
     background-color: #0a0a0a;
 }
 
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .video-container video {
+        /* iOS specific optimizations */
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
 /* Video Background */
 .video-container {
     position: fixed;
@@ -20,17 +29,16 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    background: #000; /* Black fallback */
 }
 
 .video-container video {
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     filter: brightness(0.7);
 }
 

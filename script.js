@@ -1,6 +1,30 @@
+// Simple video initialization
+function initVideo() {
+    const video = document.getElementById('background-video');
+    
+    // Try to play the video
+    video.play().catch(function(error) {
+        console.log('Autoplay was prevented:', error);
+        // Show a message or handle the error
+    });
+    
+    // Handle video errors
+    video.addEventListener('error', function(e) {
+        console.error('Video error:', e);
+        console.log('Make sure assets/hero-video.mp4 exists and is a valid MP4 file');
+    });
+    
+    // Log when video loads successfully
+    video.addEventListener('loadeddata', function() {
+        console.log('Video loaded successfully');
+    });
+}
+
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Newsletter Form Submission
+    initVideo();
+    
+    // Rest of your existing newsletter code...
     const newsletterForm = document.getElementById('newsletter-form');
     const formMessage = document.getElementById('form-message');
     
@@ -10,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const emailInput = document.getElementById('email');
         const email = emailInput.value.trim();
         
-        // Simple email validation
         if (!isValidEmail(email)) {
             showMessage('Please enter a valid email address.', 'error');
             return;
@@ -53,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Explore Button Click
     document.getElementById('explore-btn').addEventListener('click', function() {
-        document.querySelector('.newsletter').scrollIntoView({ 
-            behavior: 'smooth' 
+        document.querySelector('.newsletter').scrollIntoView({
+            behavior: 'smooth'
         });
     });
     
@@ -73,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
         formMessage.textContent = message;
         formMessage.className = type;
         
-        // Clear message after 5 seconds
         setTimeout(() => {
             formMessage.textContent = '';
             formMessage.className = '';
