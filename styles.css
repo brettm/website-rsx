@@ -11,15 +11,6 @@ body {
     background-color: #0a0a0a;
 }
 
-/* iOS Safari specific fixes */
-@supports (-webkit-touch-callout: none) {
-    .video-container video {
-        /* iOS specific optimizations */
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-}
-
 /* Video Background */
 .video-container {
     position: fixed;
