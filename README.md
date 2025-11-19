@@ -32,12 +32,13 @@ A modern, responsive holding page for a creative digital workshop business.
 3. Upload to your cPanel hosting
 4. Test on desktop and mobile
 
-## Customization
+## Customisation
 
 - Change colors in styles.css
 - Update text in index.html
 - Modify services in the dropdown menu
 - Add your own video file
+- Add your environment variables
 
 ## Support
 
