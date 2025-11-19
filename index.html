@@ -61,12 +61,21 @@
                 <h3>Stay Updated</h3>
                 <p>Be the first to know about our launch and exclusive offers.</p>
                 <!-- In the newsletter section, update the form -->
-                <form id="newsletter-form" action="subscribe.php" method="POST">
+                <!-- Add this below your newsletter form -->
+                <form id="newsletter-form">
                     <div class="input-group">
                         <input type="email" id="email" name="email" placeholder="Enter your email" required>
                         <button type="submit" class="btn primary">Subscribe</button>
                     </div>
                     <div id="form-message"></div>
+                    
+                    <!-- Add this privacy notice -->
+                    <div class="privacy-notice">
+                        <p>
+                            By subscribing, you agree to receive updates about our products and services.
+                            We respect your privacy - <a href="privacy-policy.html" style="color: #feb47b;">read our Privacy Policy</a>.
+                        </p>
+                    </div>
                 </form>
                 <div class="qr-code">
                     <div class="qr-placeholder">

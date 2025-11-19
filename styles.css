@@ -302,6 +302,25 @@ footer {
     color: #feb47b;
 }
 
+.privacy-notice {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.privacy-notice a {
+    color: #feb47b;
+    text-decoration: none;
+}
+
+.privacy-notice a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
