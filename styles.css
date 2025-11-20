@@ -249,29 +249,53 @@ main {
     font-weight: 500;
 }
 
+/* QR Code Styles */
 .qr-code {
     margin-top: 3rem;
-}
-
-.qr-placeholder {
-    display: inline-block;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
     text-align: center;
 }
 
-.qr-placeholder i {
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    color: #feb47b;
+.qr-container {
+    display: inline-block;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-.qr-placeholder p {
-    font-size: 1rem;
+.qr-image {
+    max-width: 380px;
+    max-height: 380px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem auto;
+}
+
+.qr-code p {
+    color: #fff;
+    font-size: 0.9rem;
     margin: 0;
+    font-weight: 500;
 }
 
+.qr-code p {
+    color: #fff;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Make QR code responsive */
+@media (max-width: 768px) {
+    .qr-image {
+        width: 120px;  /* Smaller on mobile */
+        height: 120px;
+    }
+    
+    .qr-container {
+        padding: 0.8rem;
+    }
+}
 /* Footer */
 footer {
     padding: 2rem 5%;
