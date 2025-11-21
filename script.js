@@ -2,6 +2,11 @@
 function initVideo() {
     const video = document.getElementById('background-video');
     
+    function restartVideo() {
+        video.currentTime = 0;
+        video.play();
+    }
+    
     // Try to play the video
     video.play().catch(function(error) {
         console.log('Autoplay was prevented:', error);
@@ -14,9 +19,12 @@ function initVideo() {
         console.log('Make sure assets/hero-video.mp4 exists and is a valid MP4 file');
     });
     
-    // Log when video loads successfully
-    video.addEventListener('loadeddata', function() {
-        console.log('Video loaded successfully');
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) restartVideo();
+    });
+
+    window.addEventListener('pageshow', () => {
+      restartVideo();   // no need to check persisted; it’s safe to restart regardless
     });
 }
 
